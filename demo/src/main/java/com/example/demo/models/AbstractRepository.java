@@ -6,28 +6,26 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 
-public abstract class AbstractRepository<T , Id>{
-  protected final JpaRepository<T , Id> repository;
+public interface AbstractRepository<T , Id> extends  JpaRepository<T, Id> {
 
-  protected AbstractRepository(JpaRepository<T , Id> repository){
-    this.repository = repository;
+  default T create(T entity){
+    return save(entity);
   }
 
-  public T save(T entity){
-    return repository.save(entity);
+   default Optional<T> findOne(Id id){
+    return findById(id);
   }
 
-  public Optional<T> findById(Id id){
-    return repository.findById(id);
+  default List<T> getAll(){
+    return findAll();
   }
 
-  public List<T> findAll(){
-    return repository.findAll();
+  default void deleteOne(Id id){
+    deleteById(id);
   }
 
-  public void deleteById(Id id){
-    repository.deleteById(id);
+  default T update(T entity){
+    return save(entity);
   }
 
-  public abstract Optional<T> findByUniqueField(String uniqueField);
 }

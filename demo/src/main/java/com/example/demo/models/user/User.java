@@ -1,10 +1,7 @@
 package com.example.demo.models.user;
 import java.util.List;
 
-import org.hibernate.annotations.NotFound;
-
 import com.example.demo.models.post.Post;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

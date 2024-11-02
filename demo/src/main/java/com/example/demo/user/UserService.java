@@ -27,6 +27,7 @@ public class UserService {
     if(userExist.isPresent()){
       throw new  ResponseStatusException(HttpStatus.CONFLICT,"email already exist");
     }
+    // send response
     return userRepository.create(user);
   }
 

@@ -1,5 +1,9 @@
 package com.example.demo.models.post;
 
-public class PostRepository {
-  
+import java.util.Optional;
+
+import com.example.demo.models.AbstractRepository;
+
+public interface  PostRepository extends AbstractRepository<Post, Long>{
+  Optional<Post> findByName(String name); 
 }

@@ -42,7 +42,12 @@ public class UserService {
   }
 
   public List<User> getAllUsers(){
-    return  userRepository.getAll();
+    // get all users
+    List<User> users =  userRepository.getAll();
+    // if list empty
+    if(users.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND , "there is no users");
+    //send response
+    return  users;
   }
 
   public User updateUser(User user){

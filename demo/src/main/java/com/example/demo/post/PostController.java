@@ -19,11 +19,11 @@ import com.example.demo.models.post.Post;
 
 @RestController
 @RequestMapping("post")
-public class PostCotroller {
+public class PostController {
   private final PostService postService;
 
   @Autowired
-  public PostCotroller(PostService postService){
+  public PostController(PostService postService){
     this.postService = postService;
   
   }

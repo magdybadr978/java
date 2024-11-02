@@ -28,4 +28,6 @@ public abstract class AbstractRepository<T , Id>{
   public void deleteById(Id id){
     repository.deleteById(id);
   }
+
+  public abstract Optional<T> findByUniqueField(String uniqueField);
 }

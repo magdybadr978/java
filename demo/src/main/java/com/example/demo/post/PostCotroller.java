@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.models.post.Post;
 
 
+
 @RestController
 @RequestMapping("post")
 public class PostCotroller {
@@ -24,6 +25,7 @@ public class PostCotroller {
   @Autowired
   public PostCotroller(PostService postService){
     this.postService = postService;
+  
   }
 
   @PostMapping
